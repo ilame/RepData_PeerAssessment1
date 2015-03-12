@@ -55,6 +55,11 @@ steps_per_day <- aggregate(steps ~ date, adata, "sum")
 
 We make a histogram of the total number of steps taken each day
 
+
+```r
+hist(steps_per_day$steps,col="red", main="Total Steps Taken Each Day",xlab="Total steps per day")
+```
+
 ![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3-1.png) 
 
 
@@ -75,6 +80,11 @@ steps_per_interval <- aggregate(steps ~ interval, adata, "mean",na.rm=TRUE)
 ```
 
 We make a time series plot of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis)
+
+
+```r
+plot(steps_per_interval$interval, steps_per_interval$steps, type="l", xlab="5-min interval", ylab="Average steps across all days",main="Average number of steps taken",col="red")
+```
 
 ![plot of chunk unnamed-chunk-6](figure/unnamed-chunk-6-1.png) 
 
@@ -130,6 +140,11 @@ steps_per_day_imputed <- aggregate(steps ~ date, new_adata, sum)
 
 We create a histogram of total number of steps in a day
 
+
+```r
+hist(steps_per_day_imputed$steps, col="violet", main="Total Steps Taken Each Day", xlab="Total steps in a day")
+```
+
 ![plot of chunk unnamed-chunk-10](figure/unnamed-chunk-10-1.png) 
 
 We calculate and report the mean and median total number of steps taken per day. 
@@ -183,6 +198,14 @@ interval_steps_imputed <- aggregate(steps ~ interval+day_type, new_adata, "mean"
 ```
 
 We make a panel plot containing a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis).
+
+
+```r
+ggplot(interval_steps_imputed, aes(x=interval, y=steps)) + 
+        geom_line(color="red") + 
+        facet_wrap(~ day_type, nrow=2, ncol=1) +
+        labs(x="Interval", y="Number of steps") 
+```
 
 ![plot of chunk unnamed-chunk-13](figure/unnamed-chunk-13-1.png) 
 
