@@ -87,7 +87,7 @@ The interval `r steps_per_interval[104,1] ` has the maximum average of steps `r 
 We calculate and report the total number of missing values in the dataset 
 
 ``` {r}
-activity_NA <-sum(is.na(rdata$steps))
+activity_NA <-sum(is.na(adata$steps))
 
 ```
 The total number of missing values are `r activity_NA`.
