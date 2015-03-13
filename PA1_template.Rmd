@@ -1,5 +1,6 @@
-<<<<<<< HEAD
+
 # "Reproducible Research Peer Assessment 1"
+
 *Coursera March 2015*
 
 ## Loading and preprocessing the data
@@ -185,30 +186,3 @@ ggplot(interval_steps_imputed, aes(x=interval, y=steps)) +
 ```
 
 We can see that there is a difference in the average number of steps taken depending on whether the day is a weekend or a week day. In fact, as we may predict, in the weekend, people generally go walking or jogging; although we also notice that the peak of average number of steps is higher for week days than weekend days.
-=======
----
-title: "Reproducible Research: Peer Assessment 1"
-output: 
-  html_document:
-    keep_md: true
----
-
-
-## Loading and preprocessing the data
-
-
-
-## What is mean total number of steps taken per day?
-
-
-
-## What is the average daily activity pattern?
-
-
-
-## Imputing missing values
-
-
-
-## Are there differences in activity patterns between weekdays and weekends?
->>>>>>> 80edf39c3bb508fee88e3394542f967dd3fd3270
